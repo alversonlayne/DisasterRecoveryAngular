@@ -1,28 +1,37 @@
 
-
-<form  #loginForm = "ngForm" *ngIf="!loggedIn()"
+<div class="w3-panel w3-card-4">
+  <form  #loginForm = "ngForm" *ngIf="!loggedIn()"
     style="padding-top: 4pt; padding-bottom: 2pt; float: right; padding-right: 2pt;"
-    class="form-inline mt-2 mt-md-0" 
+    class="form-inline mt-2 mt-md-0"
     (ngSubmit) = "login()">
-   
+
     <input class="form-control mr-sm-2" style="width: 40%; font-size: 12px;" type="text" required name="username" placeholder="Username" required [(ngModel)]="model.username">
     <input class="form-control mr-sm-2" style="width: 40%; font-size: 12px;" type="password" required name="password" placeholder="Password" required [(ngModel)]="model.password">
     <button [disabled]="!loginForm.valid" style="width: 14%; font-size: 12px;" class="btn btn-success" type="submit">Login</button>
   </form>
-  
-  <button *ngIf="!loggedIn() 
+
+</div>
+
+
+  <a routerLink="/register">
+    <button *ngIf="!loggedIn()
   "class="btn btn-info btn-sm mr-2 mt-2"
    (click)="registerToggle()"
-   style="float: right; width: 5%">
-   
+   style="float: right; width: 10%">
+
    Register</button>
+  </a>
+
+
+   <!-- <a routerLink="/register"><button class="btn btn-info btn-sm mr-2 mt-2" style="float: right; width: 10%">Register</button></a> -->
+
 
 
   <div *ngIf="loggedIn()" >
   <button class="nav-item" (click)="logout()">Logout</button>
   <p class="text-light">Welcome, {{authService.decodedToken.unique_name | titlecase}}</p>
   </div>
-  
-<div *ngIf="registerMode">
+
+<!-- <div *ngIf="registerMode">
   <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
-</div>  
+</div>   -->

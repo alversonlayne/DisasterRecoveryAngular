@@ -353,7 +353,7 @@
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\Stefanie Adrianzen\source\repos\DisasterRecoveryAngular_IntegrationAttempt1\DisasterRecoveryAngular\src\styles.css */
+    /*! C:\Users\alver\Documents\VSCodeDocs\Angular-Projects\Disaster Recovery Project\DisasterRecoveryAngular\DisasterRecoveryAngular\src\styles.css */
     "./src/styles.css");
     /***/
   }
